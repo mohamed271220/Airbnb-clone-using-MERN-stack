@@ -6,6 +6,10 @@ import IndexPage from './pages/IndexPage'
 import LoginPage from './pages/LoginPage'
 import Layout from './Layout'
 import RegisterPage from './pages/RegisterPage'
+import axios from 'axios'
+
+axios.defaults.baseURL='http://localhost:4000';
+axios.defaults.withCredentials=true;
 
 function App() {
   const [count, setCount] = useState(0)
