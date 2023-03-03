@@ -27,6 +27,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/Account/:subpage?" element={<Account />} />
+          <Route path="/Account/:subpage/:action" element={<Account />} />
  
         </Route>
       </Routes>
