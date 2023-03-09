@@ -29,7 +29,7 @@ const PlacePage = () => {
     // }
     const [places, setPlaces] = useState([])
     useEffect(() => {
-        axios.get('/places').then(({ data }) => {
+        axios.get('/user-places').then(({ data }) => {
             setPlaces(data);
         })
     }, [])
@@ -37,8 +37,6 @@ const PlacePage = () => {
         <div>
             <Nav />
             <div className='text-center'>
-                list of all added places
-                <br />
                 <Link
                     className='bg-primary text-white py-2 px-6 rounded-full gap-1 inline-flex'
                     to={'/account/places/new'} >
@@ -52,9 +50,11 @@ const PlacePage = () => {
             <div className='mt-4'>
                 {places.length > 0 && places.map(place => (
                     <Link to={'/account/places/'+place._id} className='flex cursor-pointer p-4 gap-4 rounded-2xl bg-gray-100'>
-                        <div className='w-32 h-32 bg-gray-300 shrink-0'>
+                        <div className='flex w-32 h-32 bg-gray-300 shrink-0'>
                             {place.photos.length > 0 && (
-                                <img src={place.photos[0]} alt="" />
+                                <img 
+                                className='object-cover'
+                                src={'http://localhost:4000/'+place.photos[0]} alt="" />
                             )}
                         </div>
                         <div className='grow-0 shrink'>

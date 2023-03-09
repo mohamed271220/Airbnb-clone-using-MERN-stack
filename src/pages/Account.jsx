@@ -27,23 +27,22 @@ const Account = () => {
     if (!ready) {
         return 'Loading'
     }
+    
+    
+    
+    if (toHomePage) {
+        return <Navigate to={toHomePage} />
+    }
+    
     if (ready && !user && !toHomePage) {
         return <Navigate to={'/login'} />
     }
-
-
-
-
-    if (toHomePage) {
-        return <Navigate to={'/'} />
-    }
-
     return (
         <div>
 <Nav/>
             {subpage === 'profile' && (
                 <div className='text-center max-w-lg mx-auto' >
-                    Logged in as {user.data.name} ({user.data.email})
+                    Logged in as {user.name} ({user.email})
                     <button className='primary max-w-sm mt-2' onClick={logout}>Logout</button>
                 </div>
             )}
