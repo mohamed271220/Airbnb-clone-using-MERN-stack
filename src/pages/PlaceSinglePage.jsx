@@ -26,7 +26,7 @@ const PlaceSinglePage = () => {
                     <div>
                         <h2 className='text-3xl mr-36'>Photo of {place.title}</h2>
                         <button onClick={() => setShowAllPhotos(false)} className='flex right-12 top-8 bg-white text-black
-                         gap-2 py-2 px-4 rounded-2xl fixed shadow shadow-black'>
+                        gap-2 py-2 px-4 rounded-2xl fixed shadow shadow-black'>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
@@ -58,19 +58,19 @@ const PlaceSinglePage = () => {
                     <div >
                         {place.photos?.[0] && (
                             <div>
-                                <img onClick={()=>setShowAllPhotos(true)} className='cursor-pointer aspect-square object-cover' src={'http://localhost:4000/' + place.photos[0]} />
+                                <img onClick={() => setShowAllPhotos(true)} className='cursor-pointer aspect-square object-cover' src={'http://localhost:4000/' + place.photos[0]} />
                             </div>
                         )}
                     </div>
                     <div className='grid '>
                         {place.photos?.[1] && (
                             <div>
-                                <img onClick={()=>setShowAllPhotos(true)} className='cursor-pointer aspect-square object-cover' src={'http://localhost:4000/' + place.photos[1]} />
+                                <img onClick={() => setShowAllPhotos(true)} className='cursor-pointer aspect-square object-cover' src={'http://localhost:4000/' + place.photos[1]} />
                             </div>
                         )}
                         <div className='overflow-hidden'>
                             {place.photos?.[2] && (
-                                <img onClick={()=>setShowAllPhotos(true)} className='cursor-pointer aspect-square object-cover relative top-2' src={'http://localhost:4000/' + place.photos[2]} />
+                                <img onClick={() => setShowAllPhotos(true)} className='cursor-pointer aspect-square object-cover relative top-2' src={'http://localhost:4000/' + place.photos[2]} />
                             )}
                         </div>
                     </div>
